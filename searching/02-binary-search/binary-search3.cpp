@@ -5,10 +5,10 @@ int binarySearch(int arr[], int l, int r, int x)
 {
   while (l <= r)
   {
-    int m = l + (r - l) / 2;
-    if (arr[m] == x) return m;
-    if (arr[m] < x) l = m + 1;
-    if (arr[m] > x) r = m - 1;
+    int mid = l + (r - l) / 2;
+    if (arr[mid] == x) return mid;
+    if (arr[mid] < x) l = mid + 1;
+    if (arr[mid] > x) r = mid - 1;
   }
   return -1;
 }
