@@ -9,8 +9,10 @@ int k;
 bool check(int dig)
 {
   int ele = a[dig];
-  if (k <= ele) return 1;
-  else return 0;
+  if (k <= ele)
+    return 1;
+  else
+    return 0;
 }
 
 void binsrch(int lo, int hi)
@@ -18,8 +20,10 @@ void binsrch(int lo, int hi)
   while (lo < hi)
   {
     int mid = (lo + hi) / 2;
-    if (check(mid)) hi = mid;
-    else lo = mid + 1;
+    if (check(mid))
+      hi = mid;
+    else
+      lo = mid + 1;
   }
   if (a[lo] == k)
     cout << "Element found at index " << lo;
