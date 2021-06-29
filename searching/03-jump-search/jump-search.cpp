@@ -1,3 +1,5 @@
+// time complexity: O(sqrt(n))
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -29,6 +31,6 @@ int main()
   int x = 55;
   int n = sizeof(arr) / sizeof(arr[0]);
   int index = jumpSearch(arr, x, n);
-  cout << "\nNumber " << x << " is at index " << index;
+  cout << "Number " << x << " is at index " << index << "\n";
   return 0;
 }
