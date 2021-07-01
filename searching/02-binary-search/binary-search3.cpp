@@ -1,19 +1,17 @@
-// time complexity: O(log(n))
-
 #include <bits/stdc++.h>
 using namespace std;
 
-int binarySearch(int arr[], int l, int r, int x)
+int binarySearch(int arr[], int left, int right, int target)
 {
-  while (l <= r)
+  while (left <= right)
   {
-    int mid = l + (r - l) / 2;
-    if (arr[mid] == x)
+    int mid = left + (right - left) / 2;
+    if (arr[mid] == target)
       return mid;
-    if (arr[mid] < x)
-      l = mid + 1;
-    if (arr[mid] > x)
-      r = mid - 1;
+    if (arr[mid] < target)
+      left = mid + 1;
+    if (arr[mid] > target)
+      right = mid - 1;
   }
   return -1;
 }
@@ -21,11 +19,11 @@ int binarySearch(int arr[], int l, int r, int x)
 int main(void)
 {
   int arr[] = {2, 3, 4, 10, 40};
-  int x = 10;
-  int n = sizeof(arr) / sizeof(arr[0]);
-  int result = binarySearch(arr, 0, n - 1, x);
+  int target = 10;
+  int size = sizeof(arr) / sizeof(arr[0]);
+  int result = binarySearch(arr, 0, size - 1, target);
   (result == -1)
       ? cout << "Element is not present in array"
-      : cout << "Element is present at index " << result;
+      : cout << "Element is present at index " << result << "\n";
   return 0;
 }

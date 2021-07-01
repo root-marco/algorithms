@@ -1,5 +1,3 @@
-// time complexity: O(log(n))
-
 #include <bits/stdc++.h>
 using namespace std;
 
