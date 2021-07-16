@@ -8,13 +8,12 @@ void swap(int *xp, int *yp)
   *yp = temp;
 }
 
-void selectionSort(int arr[], int n)
+void selectionSort(int arr[], int size)
 {
-  int i, j, min_idx;
-  for (i = 0; i < n - 1; i++)
+  for (int i = 0; i < size - 1; i++)
   {
-    min_idx = i;
-    for (j = i + 1; j < n; j++)
+    int min_idx = i;
+    for (int j = i + 1; j < size; j++)
       if (arr[j] < arr[min_idx])
         min_idx = j;
     swap(&arr[min_idx], &arr[i]);
@@ -23,8 +22,7 @@ void selectionSort(int arr[], int n)
 
 void printArray(int arr[], int size)
 {
-  int i;
-  for (i = 0; i < size; i++)
+  for (int i = 0; i < size; i++)
     cout << arr[i] << " ";
   cout << endl;
 }
@@ -32,9 +30,9 @@ void printArray(int arr[], int size)
 int main()
 {
   int arr[] = {64, 25, 12, 22, 11};
-  int n = sizeof(arr) / sizeof(arr[0]);
-  selectionSort(arr, n);
+  int size = sizeof(arr) / sizeof(arr[0]);
+  selectionSort(arr, size);
   cout << "Sorted array: \n";
-  printArray(arr, n);
+  printArray(arr, size);
   return 0;
 }
